@@ -1,19 +1,28 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:wght@100;300;400;700&display=swap');
 
 /*Normalize CSS*/
-* {
+*, h1, p, footer {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    
   }
-  
+
 /*Nav TOPBAR*/
   a {
     color: #fff;
     text-decoration: none;
     transition: 0.3s;
+    text-align: right;
 
   }
-  
+
+  ul.nav-list {
+    margin-left: 55%;
+  }
+
   a:hover {
     opacity: 0.7;
   }
@@ -21,17 +30,23 @@
   a:hover>img {
     transform: translateY(2%);
   }
+
+  a>img:active {
+    transform: translateY(5%);
+  }
   
   .logo>img {
     position: absolute;
     display: flex;
     width: 20vh;
-    height: 10vh;
+    height: 11vh;
     transition: .2s ease-in-out;
     box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.41);
-    padding: 5px;
+    padding: 0.3%;
     left: 1%;
-    bottom: 87vh;
+    margin-left: 3%;
+    bottom: 87.3vh;
+    border-radius: 5%;
 }
 
   
@@ -43,23 +58,26 @@
     background: #56037d;
     height: 14vh;
   }
-
+/* Body/BG */
   main {
     background: url("../img/bg.jpg") no-repeat center center;
     background-size: cover;
-    height: 92vh;
+    height: 100vh;
   }
-  
+
+  /* Responsividade */
+
   .nav-list {
     list-style: none;
     display: flex;
   }
   
   .nav-list li {
-    letter-spacing: 3px;
-    margin-left: 32px;
+    margin: 2vh 0 5% 0;
+    background-color: #56037d;
   }
   
+   
   .mobile-menu {
     display: none;
     cursor: pointer;
@@ -128,3 +146,117 @@
     transform: rotate(45deg) translate(-5px, -7px);
     z-index: 1;
   }
+
+/*To-do List*/
+
+  .toDo-container{
+    text-transform: capitalize;
+  }
+  
+  .background{
+    background: linear-gradient(210deg, rgba(34,62,130,1) 4%, rgba(49,50,141,1) 12%, rgba(53,47,144,1) 26%, rgba(60,41,150,1) 59%, rgba(81,24,167,1) 100%);
+    width: 35%;
+    height: 80vh;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    padding: 1%;
+    overflow-y: auto;
+
+}
+
+  .toDo-container {
+    min-height: 100vh;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #input-box::placeholder {
+    color: #fff;
+  }
+
+  ul li {
+    background: #eee;
+    color: #333;
+    height: 40px;
+    border-radius: 10px;
+    margin: 3% 0;
+    padding: 10px;
+    margin-right: 1%;
+    font-family: 'Poppins';
+  }
+
+  ul .fa-check, .fa-trash{
+    position: absolute;
+    cursor: pointer;
+  }
+
+  ul .fa-check{
+    right: 70vh;
+    color: green;
+  }
+
+  ul .fa-trash{
+    right: 75vh;
+    color: #ff0033;
+  }
+
+  #input-box {
+    height: 8vh;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: rgb(121, 6, 118);
+    color: #fff;
+    padding-left: 2%;
+    padding-right: 2%;
+
+  }
+  
+  .inputs {
+    list-style-type: none;
+    text-align: left;
+    padding-top: 5%;
+    padding-left: 3%;;
+  }
+
+  i {
+    padding-left: 1%;
+  }
+
+  ul .checked {
+    background: lightgreen;
+    text-decoration: line-through;
+    transition: .3s 
+  }
+
+  
+/*Footer*/
+
+ .copyright-box{
+  background-color: #6b069e;
+  width: 100%;
+  height: 15vh;
+  overflow-y: hidden;
+
+ }
+
+ .copyright {
+  display: absolute;
+  font-family: 'Poppins', sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI';
+  text-align: center;
+  color: #000;
+}
+
+.lgpd  {
+  padding-left: 85vh;
+  font-family: 'Poppins', sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI';
+  color: #000;
+  
+}
+
+.footer-container {
+  position:static;
+}

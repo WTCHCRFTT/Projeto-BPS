@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="css/styles.css">
     <title>Cronograma - Brasil PlayShox</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.png">
@@ -50,21 +50,24 @@
 
     <script src="js/jquery-3.6.0.js"></script>
 
+    <script src="js/responsive-top-navbar.js"></script>
+
     <script type="text/javascript">
         
         $(document).ready(function(){
             /*Adiciona uma tarefa*/
-            const addBox = $('#input-box').change(function(){
+            let addBox = $('#input-box').change(function(){
                 var input = $(this).val();
-                $('.inputs').append('<li>' + input + '<i class="fa-solid fa-check"></i> <i class="fa-solid fa-trash"></i>')
-                    
-                })
+                if(input.trim() !== ''){
+                    $('.inputs').append('<li>' + input + '<i class="fa-solid fa-check"></i> <i class="fa-solid fa-trash"></i>')                    
+                }
+            })
             /*Exclui a tarefa*/
-            const excluirBox = $('ul').on('click','.fa-trash',function(){
+            let excluirBox = $('ul').on('click','.fa-trash',function(){
                 $(this).parent('li').fadeOut(500);
             });
             /*Conclui uma tarefa*/
-            const verificarBox = $('ul').on('click','.fa-check',function(){
+            let verificarBox = $('ul').on('click','.fa-check',function(){
                 $(this).parent('li').toggleClass('checked');
             });
             
